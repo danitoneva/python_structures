@@ -74,4 +74,4 @@ class Deque:
         while current:
             result.append(current.data)
             current = current.next
-        return result 
+        return result
