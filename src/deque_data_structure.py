@@ -48,3 +48,30 @@ class Deque:
             self.rear.next = new_node
             self.rear = new_node
         self.size += 1
+
+    def remove_front(self):
+        """This function remove an element from the front of the queue."""
+        if self.is_empty():
+            raise ValueError("UnderFlow")
+        else:
+            self.front = self.front.next
+            self.front.prev = None
+        self.size -= 1
+
+    def remove_rear(self):
+        """This function remove an element from the end of the queue."""
+        if self.is_empty():
+            raise ValueError("UnderFlow")
+        else:
+            self.rear = self.rear.prev
+            self.rear.next = None
+        self.size -= 1
+
+    def to_list(self):
+        """Returns the deque as a list."""
+        result = []
+        current = self.front
+        while current:
+            result.append(current.data)
+            current = current.next
+        return result 

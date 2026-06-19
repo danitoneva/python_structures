@@ -21,5 +21,29 @@ class TestDeque():
         result = dq.to_list()
         assert expected == result
 
+    def test_remove_front(self):
+        dq = Deque()
+        dq.insert_front(5)
+        dq.insert_front(10)
+        dq.remove_front()
+        expected = [5]
+        result = dq.to_list()
+        assert expected == result
+
+    def test_remove_rear(self):
+        dq = Deque()
+        dq.insert_rear(5)
+        dq.insert_rear(10)
+        dq.remove_rear()
+        expected = [5]
+        result = dq.to_list()
+        assert expected == result
+
+    def test_remove_empty(self):
+        dq = Deque()
+
+        with pytest.raises(ValueError):
+            dq.remove_rear()
+
 if __name__ == '__main__':
     pytest.main()
