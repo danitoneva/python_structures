@@ -1,4 +1,4 @@
-
+"""Linked-list node structures and operations"""
 
 
 class Node:
@@ -8,6 +8,9 @@ class Node:
         self.next = None
 
 class SingleLinkedList:
+    def __init__(self):
+        self.head = None
+
     def detect_loop(self, head):
         "This loop is for detection of a loop using Floyd's Cycle-Finding Algorithm"
 
@@ -21,3 +24,14 @@ class SingleLinkedList:
             if slow == fast:
                 return True
         return False
+
+    def reverse_list(self, head):
+        prev = None
+        current = head
+
+        while current is not None:
+            next_node = current.next
+            current.next = prev
+            prev = current
+            current = next_node
+        return prev

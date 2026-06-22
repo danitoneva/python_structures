@@ -9,7 +9,6 @@ class TestSingleLinkedList():
         head = Node(1)
         head.next = Node(3)
         head.next.next = Node(4)
-
         head.next.next.next = head.next
 
         expected = True
@@ -24,6 +23,20 @@ class TestSingleLinkedList():
 
         expected = False
         result = SingleLinkedList.detect_loop(self, head)
+        assert expected == result
+
+    def test_reverse_list(self):
+        head = Node(10)
+        head.next = Node(20)
+        head.next.next = Node(30)
+
+        result = []
+        current = SingleLinkedList.reverse_list(self, head)
+        while current:
+            result.append(current.data)
+            current = current.next
+
+        expected = [30, 20, 10]
         assert expected == result
 
 if __name__ == '__main__':
