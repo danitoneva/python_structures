@@ -2,7 +2,10 @@
 
 
 class FifoQueue:
-    """This class creates a FIFO Queue and basic operation like enqueue, dequeue, is_empty and size."""
+    """
+    This class creates a FIFO Queue and basic operation like 
+    enqueue, dequeue, is_empty and size.
+    """
     def __init__(self):
         """This functions creates a list for the queue."""
         self.items = []
