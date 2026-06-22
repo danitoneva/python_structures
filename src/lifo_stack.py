@@ -27,7 +27,7 @@ class LifoStack:
     def size(self):
         "This functions returns the size of the stack."
         return len(self.items)
-    
+
     def peek(self):
         "Return the first element."
         return self.items[0]
