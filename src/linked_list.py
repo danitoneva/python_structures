@@ -14,7 +14,7 @@ class Node:
 
 class DoublyNode:
     "Creates nodes for doubly linked list."
-    def __init__(self, data, prev = None, next = None):
+    def __init__(self, data, prev_node = None, next_node = None):
         """
         Initialize a doubly linked list node.
         
@@ -23,8 +23,8 @@ class DoublyNode:
         :parameter next: reference to next node
         """
         self.data = data
-        self.prev = prev
-        self.next = next
+        self.prev_node = prev_node
+        self.next_node = next_node
 
 class SinglyLinkedList:
     """This class is for singly linked list and basic operations."""

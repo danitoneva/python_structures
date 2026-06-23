@@ -55,11 +55,11 @@ class TestSingleLinkedList():
 class TestDoublyLinkedList():
     def test_doubly_linked_list(self):
         d1 = DoublyNode(10)
-        d2 = DoublyNode(20, prev=d1)
+        d2 = DoublyNode(20, prev_node=d1)
         d1.next = d2
 
         assert d1.next == d2
-        assert d2.prev is d1
+        assert d2.prev_node is d1
 
 if __name__ == '__main__':
     pytest.main()
