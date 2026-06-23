@@ -1,6 +1,6 @@
 """This module is for testing insertion at the front and back of the deque."""
 import pytest
-from src.linked_list import Node, SingleLinkedList
+from src.linked_list import Node, SinglyLinkedList
 from src.linked_list import DoublyNode
 
 class TestSingleLinkedList():
@@ -13,7 +13,7 @@ class TestSingleLinkedList():
         head.next.next.next = head.next
 
         expected = True
-        result = SingleLinkedList.detect_loop(self, head)
+        result = SinglyLinkedList.detect_loop(self, head)
         assert expected == result
 
     def test_no_loop_detected(self):
@@ -23,7 +23,7 @@ class TestSingleLinkedList():
         head.next.next.next = Node(5)
 
         expected = False
-        result = SingleLinkedList.detect_loop(self, head)
+        result = SinglyLinkedList.detect_loop(self, head)
         assert expected == result
 
     def test_reverse_list(self):
@@ -32,7 +32,7 @@ class TestSingleLinkedList():
         head.next.next = Node(30)
 
         result = []
-        current = SingleLinkedList.reverse_list(self, head)
+        current = SinglyLinkedList.reverse_list(self, head)
         while current:
             result.append(current.data)
             current = current.next
@@ -49,7 +49,7 @@ class TestSingleLinkedList():
 
         n = 2
         expected = 5
-        result = SingleLinkedList.nth_to_last(self, head, n)
+        result = SinglyLinkedList.nth_to_last(self, head, n)
         assert expected == result
 
 class TestDoublyLinkedList():

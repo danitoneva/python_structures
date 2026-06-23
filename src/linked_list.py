@@ -2,18 +2,20 @@
 
 
 class Node:
-    "Creates linked list."
+    "Creates nodes for singly linked list."
     def __init__(self, data):
         self.data = data
         self.next = None
 
 class DoublyNode:
+    "Creates nodes for doubly linked list."
     def __init__(self, data, prev = None, next = None):
         self.data = data
         self.prev = prev
         self.next = next
 
-class SingleLinkedList:
+class SinglyLinkedList:
+    """This class is for singly linked list and basic operations."""
     def __init__(self):
         self.head = None
 
@@ -32,6 +34,7 @@ class SingleLinkedList:
         return False
 
     def reverse_list(self, head):
+        """This function reverses the list."""
         prev = None
         current = head
 
@@ -43,6 +46,7 @@ class SingleLinkedList:
         return prev
 
     def nth_to_last(self, head, n):
+        """Find nth to last node of a linked list."""
         fast = head
         slow = head
         i = 1
