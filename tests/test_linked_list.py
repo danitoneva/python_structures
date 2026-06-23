@@ -1,6 +1,7 @@
 """This module is for testing insertion at the front and back of the deque."""
 import pytest
-from src.single_linked_list import Node, SingleLinkedList
+from src.linked_list import Node, SingleLinkedList
+from src.linked_list import DoublyNode
 
 class TestSingleLinkedList():
     """This class is for testing single linked list and common operations."""
@@ -50,6 +51,15 @@ class TestSingleLinkedList():
         expected = 5
         result = SingleLinkedList.nth_to_last(self, head, n)
         assert expected == result
+
+class TestDoublyLinkedList():
+    def test_doubly_linked_list(self):
+        d1 = DoublyNode(10)
+        d2 = DoublyNode(20, prev=d1)
+        d1.next = d2
+
+        assert d1.next == d2
+        assert d2.prev is d1
 
 if __name__ == '__main__':
     pytest.main()

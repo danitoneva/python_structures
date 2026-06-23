@@ -7,6 +7,12 @@ class Node:
         self.data = data
         self.next = None
 
+class DoublyNode:
+    def __init__(self, data, prev = None, next = None):
+        self.data = data
+        self.prev = prev
+        self.next = next
+
 class SingleLinkedList:
     def __init__(self):
         self.head = None
