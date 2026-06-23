@@ -47,9 +47,9 @@ class TestSingleLinkedList():
         head.next.next.next = Node(5)
         head.next.next.next.next = Node(4)
 
-        n = 2
+        position_from_end  = 2
         expected = 5
-        result = SinglyLinkedList.nth_to_last(self, head, n)
+        result = SinglyLinkedList.nth_to_last(self, head, position_from_end )
         assert expected == result
 
 class TestDoublyLinkedList():
