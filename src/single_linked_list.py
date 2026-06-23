@@ -35,3 +35,18 @@ class SingleLinkedList:
             prev = current
             current = next_node
         return prev
+
+    def nth_to_last(self, head, n):
+        fast = head
+        slow = head
+        i = 1
+
+        while fast and i <= n:
+            fast = fast.next
+            i += 1
+
+        while fast:
+            fast = fast.next
+            slow = slow.next
+
+        return slow.data

@@ -39,5 +39,17 @@ class TestSingleLinkedList():
         expected = [30, 20, 10]
         assert expected == result
 
+    def test_nth_to_last(self):
+        head = Node(3)
+        head.next = Node(1)
+        head.next.next = Node(2)
+        head.next.next.next = Node(5)
+        head.next.next.next.next = Node(4)
+
+        n = 2
+        expected = 5
+        result = SingleLinkedList.nth_to_last(self, head, n)
+        assert expected == result
+
 if __name__ == '__main__':
     pytest.main()
